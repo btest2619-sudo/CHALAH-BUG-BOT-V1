@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 // --- CONFIGURATION ---
 const ownerNumber = "94742271802@s.whatsapp.net"; 
 const GITHUB_TOKEN = "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"; 
-const GITHUB_REPO = "btest2619-sudo/-404";
+const GITHUB_REPO = "btest2619-sudo/Database-Md.git";
 const SESSION_BRANCH = "session-data";
 const botNameAr = "تشالاه فويد ٤٠٤";
 const logoUrl = 'https://files.catbox.moe/90yqxb.png';
