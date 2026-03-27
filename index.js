@@ -15,7 +15,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // --- CONFIGURATION ---
-const ownerNumber = "947xxxxxxxx@s.whatsapp.net"; 
+const ownerNumber = "94742271802@s.whatsapp.net"; 
 const GITHUB_TOKEN = "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"; 
 const GITHUB_REPO = "btest2619-sudo/-404";
 const SESSION_BRANCH = "session-data";
@@ -99,7 +99,7 @@ async function startVoidBot() {
 
     // --- WEB ROUTES (Cannot Get Error විසඳුම) ---
     app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, 'index.html'));
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
     });
 
     app.get('/pair', async (req, res) => {
