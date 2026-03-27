@@ -86,24 +86,33 @@
     </div>
 
     <script>
-        // ඔයාගේ පරණ function එක ඒ විදිහටම ඇඩ් කරලා තියෙන්නේ
         async function getPairingCode() {
             const num = document.getElementById('number').value;
             const display = document.getElementById('codeDisplay');
             
             if(!num) {
-                display.innerText = "ENTER NUMBER";
+                display.innerText = "⚠️ ENTER NUMBER";
+                display.style.color = "#ff0000";
                 return;
             }
 
-            display.innerText = "GENERATING...";
+            display.innerText = "⏳ GENERATING...";
+            display.style.color = "#ffff00";
+            
             try {
-                // Backend එකෙන් pair code එක fetch කරන කොටස
                 const response = await fetch(`/pair?number=${num}`);
                 const data = await response.json();
-                display.innerText = data.code || "ERROR";
+                
+                if(data.code) {
+                    display.innerText = data.code;
+                    display.style.color = "#00ff00";
+                } else {
+                    display.innerText = data.error || "❌ ERROR";
+                    display.style.color = "#ff0000";
+                }
             } catch (err) {
-                display.innerText = "FAILED TO FETCH";
+                display.innerText = "❌ CONNECTION FAILED";
+                display.style.color = "#ff0000";
             }
         }
     </script>
